@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Norin Davyd RIM-110980</title>
 
-    <link rel="stylesheet" href="index.css">
+    <script src="./js/dist.min.js"></script>
+
+    <link rel="stylesheet" href="./css/index.min.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap"
         rel="stylesheet"
@@ -14,9 +16,16 @@
         href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
         rel="stylesheet"
     >
-
-    <script src="./js/changeCSS.js"></script>
-    <script src="./js/formValidation.js"></script>
+    <link 
+        href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"
+        rel="stylesheet" 
+    >
+    <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        rel="stylesheet"
+    >
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 </head>
 <body>
 
@@ -25,7 +34,7 @@
         <div class="page-container">
             <div class="promo-container">
 
-                <div class="promo_logo_wrapper">
+                <div class="promo_logo__wrapper">
                     <img
                         class="promo_logo" 
                         src="img/logo.png"
@@ -39,7 +48,7 @@
                             С помощью нас <br>
                             вы сможете создать то, о чем<br>
                         </div>
-                        <div class="decor-descr left-text expanded-text">
+                        <div class="decor-descr left-text expanded-text will-expand">
                             желаете!
                         </div>
                         <div class="decor-common-descr left-text">
@@ -47,7 +56,7 @@
                             огромного успеха. Мы верим в ваc! И знаем это
                             на все 100%. Вас не остановить!
                         </div>
-                        <div class="decor-button" onclick="getMore()">
+                        <div id="get-more-button" class="decor-button" onclick="getMore()">
                             Узнать больше...
                         </div>
                     </div>
@@ -76,6 +85,7 @@
             <div class="needings_items">
                 <div id="item1" class="needings_item">
                     <img
+                        id="item1_image"
                         class="item_image"
                         src="img/f3.png"
                         alt="Инструменты"
@@ -90,6 +100,7 @@
 
                 <div id="item2" class="needings_item">
                     <img
+                        id="item2_image"
                         class="item_image"
                         src="img/f4.png"
                         alt="Воздушный шар"
@@ -104,6 +115,7 @@
 
                 <div id="item3" class="needings_item">
                     <img
+                        id="item3_image"
                         class="item_image"
                         src="img/f5.png"
                         alt="Флаг"
@@ -190,9 +202,11 @@
                     <span id="problem-err" class="not-val"></span>
                 </label>
                 <button
+                    id="product-button"
                     type="button"
                     class="decor-button"
                     onclick="getSummary()"
+                    onmouseover="bounceButton()"
                 >
                     Заказать услугу
                 </button>
@@ -250,7 +264,12 @@
                     placeholder="Какая тема вас интересует?"
                     required
                 >
-                <button type="submit" class="decor-button">
+                <button
+                    id="callback-button"
+                    type="submit"
+                    class="decor-button"
+                    onmouseover="heartBeatButton()"
+                >
                     Отправить
                 </button>
             </form>
@@ -259,9 +278,9 @@
     </section>
 
     <!-- Подвал -->
-    <section class="footer center-title">
+    <section class="footer center-title copyrightExpand">
         © Всё на этом сайте защищено
     </section>
-    
+
 </body>
 </html>
